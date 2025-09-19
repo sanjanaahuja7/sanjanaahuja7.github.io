@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Project 1",
+        "folder": "assets/project1",
+        "header": "header.png",
+        "description": "This is a detailed description of Project 1. It involved creating a cohesive brand identity, from the logo to the social media assets. The primary tools used were Adobe Illustrator and Photoshop.",
+        "files": [
+            "img1.png",
+            "vid1.mp4",
+            "img2.png"
+        ]
+    },
+    {
+        "name": "Project 2",
+        "folder": "assets/project2",
+        "header": "header.png",
+        "description": "Project 2 was a video editing task for a promotional campaign. I used Adobe Premiere Pro and After Effects to cut, color grade, and add motion graphics to the final video.",
+        "files": [
+            "img1.png",
+            "img2.png",
+            "vid1.mp4"
+        ]
+    }
+]
