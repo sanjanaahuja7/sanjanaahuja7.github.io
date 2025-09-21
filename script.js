@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modal-body');
     const closeButton = document.querySelector('.close-button');
 
+    // Define your R2 bucket base URL here, so both functions can access it
+    const assetBaseUrl = 'https://pub-a7dd156852ea4f32aa6c9f0aa5bc4fc6.r2.dev';
+
     // Fetch project data from the JSON file
     fetch('projects.json')
         .then(response => {
@@ -29,8 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         projects.forEach(project => {
             const projectBox = document.createElement('div');
             projectBox.classList.add('project-box');
+            
+            // **THIS IS THE CORRECTED LINE**
+            // Prepend the assetBaseUrl to the header image path
             projectBox.innerHTML = `
-                <img src="assets/${project.folder}/${project.header}" alt="${project.name}">
+                <img src="${assetBaseUrl}/${project.folder}/${project.header}" alt="${project.name}">
                 <div class="project-overlay">
                     <div class="project-title">${project.name}</div>
                 </div>
@@ -41,12 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openModal(project) {
-        // Define your new R2 bucket base URL
-        const assetBaseUrl = 'https://pub-a7dd156852ea4f32aa6c9f0aa5bc4fc6.r2.dev';
         let modalHTML = `<h2>${project.name}</h2>`;
         modalHTML += `<p class="project-description">${project.description}</p><hr>`;
+        
         project.files.forEach(file => {
-            // Construct the full URL using the base URL, project folder, and filename
             const filePath = `${assetBaseUrl}/${project.folder}/${file}`; 
             const fileExtension = file.split('.').pop().toLowerCase();
             
