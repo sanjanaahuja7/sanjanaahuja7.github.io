@@ -41,11 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openModal(project) {
+        // Define your new R2 bucket base URL
+        const assetBaseUrl = 'https://cbfb7d6c4c48951e8e795b410c4dd636.r2.cloudflarestorage.com/sanjana-portfolio-assets';
         let modalHTML = `<h2>${project.name}</h2>`;
         modalHTML += `<p class="project-description">${project.description}</p><hr>`;
-        
         project.files.forEach(file => {
-            const filePath = `assets/${project.folder}/${file}`;
+            // Construct the full URL using the base URL, project folder, and filename
+            const filePath = `${assetBaseUrl}/${project.folder}/${file}`; 
             const fileExtension = file.split('.').pop().toLowerCase();
             
             if (['mp4', 'webm', 'ogg'].includes(fileExtension)) {
