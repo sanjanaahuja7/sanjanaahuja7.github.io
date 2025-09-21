@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openModal(project) {
         // Define your new R2 bucket base URL
-        const assetBaseUrl = 'https://cbfb7d6c4c48951e8e795b410c4dd636.r2.cloudflarestorage.com/sanjana-portfolio-assets';
+        const assetBaseUrl = 'https://pub-a7dd156852ea4f32aa6c9f0aa5bc4fc6.r2.dev';
         let modalHTML = `<h2>${project.name}</h2>`;
         modalHTML += `<p class="project-description">${project.description}</p><hr>`;
         project.files.forEach(file => {
